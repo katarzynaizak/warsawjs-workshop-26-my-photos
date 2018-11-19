@@ -2,15 +2,12 @@ const imagesPaths = ['images/DSCN3277.JPG','images/DSCN3312.JPG','images/DSCN331
 
 const imagesGallery = document.getElementById('images')
 
+imagesGallery.addEventListener('click',({target}) => {
+    target.classList.toggle('image--favourite')
+})
+
 imagesPaths.forEach((image) => {
     const newImage = document.createElement('img')
     newImage.setAttribute('src', image)
-    newImage.addEventListener('click', () => {
-        if (newImage.classList.contains('image--favourite')) {
-            newImage.classList.remove('image--favourite')
-        } else {
-            newImage.classList.add('image--favourite')
-        }
-    })
     imagesGallery.appendChild(newImage)
 })
