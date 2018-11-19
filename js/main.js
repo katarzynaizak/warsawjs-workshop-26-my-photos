@@ -5,5 +5,6 @@ const imagesGallery = document.getElementById('images')
 imagesPaths.forEach((image) => {
     const newImage = document.createElement('img')
     newImage.setAttribute('src', image)
+    newImage.addEventListener('click', () => newImage.classList.add('image--favourite'))
     imagesGallery.appendChild(newImage)
 })
